@@ -75,5 +75,16 @@ if \[ \-f "</span>{python_scripts_path}/create_jenkins_managed_files_yaml.py" ];
 fi
 log\_message "Generating cloud configurations \(AWS\)\.\.\."
 if \[ \-d "</span>{jcasc_input_path}/clouds/aws" ]; then
-    log_message "AWS cloud config directory found at ${jcasc_input_path}/clouds/aws."
-    log_message "Placeholder: Implement AWS JCasC generation using
+    log_message "AWS cloud config directory found at <span class="math-inline">\{jcasc\_input\_path\}/clouds/aws\."
+log\_message "Placeholder\: Implement AWS JCasC generation using cloud\.cfg and potentially a new Python script\."
+echo "jenkins\:" \> "</span>{CASC_OUTPUT_DIR}/03-cloud-aws-dummy.yaml"
+    echo "  clouds:" >> "<span class="math-inline">\{CASC\_OUTPUT\_DIR\}/03\-cloud\-aws\-dummy\.yaml"
+echo "  \- ec2\:" \>\> "</span>{CASC_OUTPUT_DIR}/03-cloud-aws-dummy.yaml"
+    echo "      name: \"aws-dummy-dev\"" >> "<span class="math-inline">\{CASC\_OUTPUT\_DIR\}/03\-cloud\-aws\-dummy\.yaml"
+echo "      cloudId\: \\"aws\-dummy\-dev\\"" \>\> "</span>{CASC_OUTPUT_DIR}/03-cloud-aws-dummy.yaml"
+    echo "      region: \"us-east-1\"" >> "<span class="math-inline">\{CASC\_OUTPUT\_DIR\}/03\-cloud\-aws\-dummy\.yaml"
+echo "      instanceCap\: 1" \>\> "</span>{CASC_OUTPUT_DIR}/03-cloud-aws-dummy.yaml"
+    echo "      templates:" >> "<span class="math-inline">\{CASC\_OUTPUT\_DIR\}/03\-cloud\-aws\-dummy\.yaml"
+echo "      \- ami\: \\"ami\-00000000000000000\\"" \>\> "</span>{CASC_OUTPUT_DIR}/03-cloud-aws-dummy.yaml"
+    echo "        instanceType: \"t2.micro\"" >> "${CASC_OUTPUT_DIR}/03-cloud-aws-dummy.yaml"
+    echo "        label: \"aws-
