@@ -16,7 +16,7 @@ RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
 RUN pip3 install --no-cache-dir lftools
 
 COPY scripts/ /app/scripts/
-COPY jenkins-configs/ /app/jenkins-configs/
+COPY jenkins-config/ /app/jenkins-config/
 COPY crontab /etc/cron.d/jcasc-cron
 COPY entrypoint.sh /app/entrypoint.sh
 
